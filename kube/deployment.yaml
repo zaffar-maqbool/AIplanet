@@ -15,7 +15,8 @@ spec:
       containers:
       - name: my-app  # Matches the container name in your Dockerfile
         image: zaffarwani/ttrstdfornt:v3
+        imagePullPolicy: Always
         ports:
-        - containerPort: 3000  
+        - containerPort: 80  
           name: http  
         command: ["npm", "run", "dev"]  
