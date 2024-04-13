@@ -24,6 +24,5 @@ Delete Resources: Using kubectl delete commands with the resource names to remov
 kubectl delete rollout my-app-rollout
 kubectl delete service my-app-service
 kubectl delete service my-app-canary-service
-(Optional) kubectl delete pod <pod-name1>
-(Optional) kubectl delete pod <pod-name2> Replace placeholders with specific resource names obtained in step 1.
+
 Verify Cleanup: Using kubectl get commands again to ensure the resources have been removed successfully.
