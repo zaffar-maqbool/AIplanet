@@ -1,14 +1,17 @@
 This document summarizes my experience setting up a canary deployment with Argo Rollouts on a local Kubernetes cluster. Since this was my first time using Argo CD, I encountered some challenges understanding its concepts and functionalities.
+
 Stack
 Github
 Github actions 
 Kubernetes
 Argo CD
+
 Initial Steps and Challenges:
 Resource Creation: As a primer, I started by creating essential Kubernetes resources:
 deployment.yaml: Defined the initial deployment configuration for the application.
 service.yaml: Created a service to expose the deployed application.
 ci-action.yaml inside .github/workflow:
+
 Learning Argo CD: Since I was new to Argo CD, familiarizing myself with its workflow and how it interacts with Kubernetes resources for deployments was a key challenge.
 Canary Deployment with Argo Rollouts:
 Deployment Manifest Modification: The existing deployment manifest (deployment.yaml) was edited to remove the replicas field to utilize Argo Rollouts for managing replicas during the rollout process.
