@@ -1,0 +1,20 @@
+apiVersion: argoprocd/v1alpha1
+kind: Rollout
+metadata:
+  name: my-app-rollout
+spec:
+  replicas: 2 
+  strategy:
+    canary:
+      canaryService: my-app-canary-service 
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+      - name: my-app  
+        imagePullPolicy: Always 
+        ports:
+        - containerPort: 80 
+        command: ["npm", "run", "dev"] 

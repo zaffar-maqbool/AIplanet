@@ -1,22 +1,11 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: Service
 metadata:
-  name: my-app  
+  name: my-app-canary-service 
 spec:
-  replicas: 1 
   selector:
-    matchLabels:
-      app: my-app
-  template:
-    metadata:
-      labels:
-        app: my-app
-    spec:
-      containers:
-      - name: my-app  # Matches the container name in your Dockerfile
-        image: zaffarwani/ttrstdfornt:v3
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80  
-          name: http  
-        command: ["npm", "run", "dev"]  
+    app: my-app  
+  ports:
+  - protocol: TCP
+    port: 80  
+    targetPort: 80
